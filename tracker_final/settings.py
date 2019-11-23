@@ -25,7 +25,9 @@ from tracker_final.celery import app as celery_app
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+	'*'
+]
 
 # Application definition
 
@@ -47,11 +49,9 @@ INSTALLED_APPS = [
 	'hod_lor',
 	'oauth2_provider',
 	'rest_framework_social_oauth2',
-	'social_django'
-	# 'allauth',
-	# 'allauth.account',
-	# 'allauth.socialaccount',
-	# 'allauth.socialaccount.providers.google'
+	'social_django',
+	'sslserver',
+	'djcelery'
 ]
 DATABASES = {
 	'default': {
@@ -82,7 +82,6 @@ AUTHENTICATION_BACKENDS = (
 	"django.contrib.auth.backends.ModelBackend",
 	'social_core.backends.google.GoogleOAuth2',
 	'rest_framework_social_oauth2.backends.DjangoOAuth2',
-	# "allauth.account.auth_backends.AuthenticationBackend",
 )
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '373821760819-n464h5ipe9u121o98tqbd5973q4m1djg.apps.googleusercontent.com'
@@ -96,30 +95,7 @@ OAUTH2_PROVIDER = {
 # SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
 # SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get("SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET")
 
-# CORS_ORIGIN_WHITELIST = (
-#     'localhost:3000',
-#     'localhost:8000',
-# )
 CORS_ALLOW_CREDENTIALS = True
-# SITE_ID = 1
-# ACCOUNT_EMAIL_REQUIRED = True
-# ACCOUNT_USERNAME_REQUIRED = False
-# ACCOUNT_AUTHENTICATION_METHOD = 'email'
-# ACCOUNT_USER_MODEL_USERNAME_FIELD = None
-# LOGIN_REDIRECT_URL = '/api/student/home'
-# CLIENT_ID_GOOGLE = '373821760819-n464h5ipe9u121o98tqbd5973q4m1djg.apps.googleusercontent.com'
-# SOCIALACCOUNT_QUERY_EMAIL = True
-# SOCIALACCOUNT_PROVIDERS = {
-#     'google': {
-#         'SCOPE': [
-#             'profile',
-#             'email',
-#         ],
-#         'AUTH_PARAMS': {
-#             'access_type': 'online',
-#         }
-#     }
-# }
 
 ################################## GMAIL SERVICE #####################################
 EMAIL_USE_TLS = True
@@ -127,14 +103,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'ghotden@gmail.com'
 EMAIL_HOST_PASSWORD = '9440171221'
 EMAIL_PORT = 587
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
-#         'rest_framework.authentication.TokenAuthentication',
 REST_FRAMEWORK = {
 	'DEFAULT_AUTHENTICATION_CLASSES': (
 		'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
@@ -167,31 +135,6 @@ JWT_AUTH = {
 	'JWT_PAYLOAD_HANDLER': 'tracker_final.custom_jwt.jwt_payload_handler',
 	'JWT_PAYLOAD_GET_USERNAME_HANDLER': 'tracker_final.custom_jwt.jwt_get_username_from_payload_handler'
 }
-# 'JWT_PAYLOAD_HANDLER': 'custom_jwt.jwt_payload_handler'
-
-# SIMPLE_JWT = {
-#     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
-#     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-#     'ROTATE_REFRESH_TOKENS': False,
-#     'BLACKLIST_AFTER_ROTATION': True,
-#
-#     'ALGORITHM': 'HS256',
-#     'SIGNING_KEY': SECRET_KEY,
-#     'VERIFYING_KEY': None,
-#
-#     'AUTH_HEADER_TYPES': ('Bearer',),
-#     'USER_ID_FIELD': 'id',
-#     'USER_ID_CLAIM': 'user_id',
-#
-#     'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
-#     'TOKEN_TYPE_CLAIM': 'token_type',
-#
-#     'JTI_CLAIM': 'jti',
-#
-#     'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
-#     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
-#     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
-# }
 
 MIDDLEWARE = [
 	'django.middleware.security.SecurityMiddleware',
@@ -211,7 +154,7 @@ ROOT_URLCONF = 'tracker_final.urls'
 TEMPLATES = [
 	{
 		'BACKEND': 'django.template.backends.django.DjangoTemplates',
-		'DIRS': [os.path.join(BASE_DIR, 'templates')]
+		'DIRS': [os.path.join(BASE_DIR, 'client/frontend')]
 		,
 		'APP_DIRS': True,
 		'OPTIONS': {
@@ -249,6 +192,7 @@ AUTH_PASSWORD_VALIDATORS = [
 	},
 ]
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -266,3 +210,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+	os.path.join(BASE_DIR, 'client/frontend', 'build', 'static'),
+)

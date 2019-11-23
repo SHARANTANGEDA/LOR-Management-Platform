@@ -89,7 +89,7 @@ handleWindowSizeChange = () => {
 				<div className="row col-md-6 d-flex justify-content-start align-items-center"
 						 style={{color: 'white', verticalAlign: 'bottom'}}>
 					<Link to='/dashboard'><img style={{maxWidth: '450px', maxHeight: '100px'}}
-																			src={require('../../img/bitslogoFull.png')} alt=""/></Link>
+																		 src={require('../../img/bitslogoFull.png')} alt=""/></Link>
 				</div>
 
 				<div className="row col-md-4 d-flex justify-content-end align-items-center" style={{color: 'white'}}>
@@ -114,7 +114,7 @@ handleWindowSizeChange = () => {
 				<div className="row col-md-6 d-flex justify-content-start align-items-center"
 						 style={{color: 'white', verticalAlign: 'bottom'}}>
 					<Link to='/dashboard'><img style={{maxWidth: '450px', maxHeight: '100px'}}
-																			src={require('../../img/bitslogoFull.png')} alt=""/></Link>
+																		 src={require('../../img/bitslogoFull.png')} alt=""/></Link>
 				</div>
 
 				<div className="row col-md-4 d-flex justify-content-end align-items-center" style={{color: 'white'}}>

@@ -96,7 +96,8 @@ class Landing extends Component {
               localStorage.setItem("google_name", response.profileObj.name);
               localStorage.setItem("email", response.profileObj.email);
             }
-            this.props.convertGoogleToken(response.Zi.access_token);
+            console.log({ursl: response.profileObj.imageUrl})
+            this.props.convertGoogleToken(response.Zi.access_token,  response.profileObj.imageUrl);
           };
           const responseGoogleFailure = response => {
             console.log(response);

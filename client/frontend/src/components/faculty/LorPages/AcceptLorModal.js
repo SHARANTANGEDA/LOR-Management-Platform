@@ -41,9 +41,13 @@ class AcceptLorModal extends Component {
 		const {content} = this.props;
 		let imgContent = null;
 		if(this.state.image===false) {
-			imgContent=(<img src={require('../../../img/landingIcons/student.png')}
-								height='150px' width='150px' alt={require('../../../img/landingIcons/student.png')}
-                   style={{maxHeight:'250px', width:'225px'}}/>)
+					console.log('here', this.state.image)
+
+			imgContent = (
+           <img src={require('../../../img/landingIcons/student.png')}
+                height='150px' width='150px' alt=''
+                   style={{maxHeight:'250px', width:'225px', borderRadius:'50%'}}/>
+        )
 		}else {
 			imgContent=(<img src={`data:;base64,${this.state.image}`}
 								height='180px' width='120px' alt=''

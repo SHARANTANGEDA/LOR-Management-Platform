@@ -13,7 +13,6 @@ from rest_framework import permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from student_lor.models import *
 from student_lor.permissions import HasGroupPermission
 from student_lor.serializers import *
 from tracker_final.settings import BASE_DIR
@@ -337,6 +336,7 @@ class GetStudentProfilePhoto(APIView):
 			with open(image_path, "rb") as image_file:
 				base64string = base64.b64encode(image_file.read())
 				return HttpResponse(base64string, content_type=content_type)
-		except ObjectDoesNotExist:
+		except ObjectDoesNotExist or FileNotFoundError:
 			return Response({'status': False})
+
 

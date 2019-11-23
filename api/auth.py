@@ -3,13 +3,12 @@ from oauth2_provider.models import AccessToken
 from rest_framework import permissions, generics
 from rest_framework.authtoken.models import Token
 from rest_framework.exceptions import ValidationError
-from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_jwt.settings import api_settings
 from rest_framework_social_oauth2.views import ConvertTokenView
 
+from student_lor.models import *
 from tracker_final.custom_jwt import jwt_payload_handler
-from .models import *
 from .serializers import *
 
 
@@ -42,11 +41,21 @@ class GoogleLogin(ConvertTokenView):
 		print(response.data)
 		token = AccessToken.objects.get(token=response.data['access_token'])
 		user = token.user
-		faculty_mail_list = []
-		hod_mail_list = []
+		faculty_mail_list = ['hota@hyderabad.bits-pilani.ac.in', 'gururaj@hyderabad.bits-pilani.ac.in',
+							 'bhanu@hyderabad.bits-pilani.ac.in ', 'rayt@hyderabad.bits-pilani.ac.in',
+							 'geetha@hyderabad.bits-pilani.ac.in', 'arunam@hyderabad.bits-pilani.ac.in',
+							 'barsha.mitra@hyderabad.bits-pilani.ac.in', 'sbatabyal@hyderabad.bits-pilani.in',
+							 'spanda@hyderabad.bits-pilani.ac.in', 'sudeepta@hyderabad.bits-pilani.ac.in',
+							 'lovkumar@hyderabad.bits-pilani.ac.in', 'jabezc@hyderabad.bits-pilani.ac.in',
+							 'odelu.vanga@hyderabad.bits-pilani.ac.in', 'psaxena@hyderabad.bits-pilani.ac.in',
+							 'rajibrm@hyderabad.bits-pilani.ac.in ', 'manjanna@hyderabad.bits-pilani.ac.in',
+							 'manik@hyderabad.bits-pilani.ac.in', 'dipanjan@hyderabad.bits-pilani.ac.in',
+							 'surender.samant@hyderabad.bits-pilani.ac.in', 'narsi.bolloju@hyderabad.bits-pilani.ac.in']
+		hod_mail_list = ['hod.csis@hyderabad.bits-pilani.ac.in']
 		if not str(user.email).__contains__('@hyderabad.bits-pilani.ac.in'):
 			return ValidationError("You can't use this application!")
 		# if user.role == '' or user.role is None:
+
 		if user.email in faculty_mail_list:
 			user_update = AppUser.objects.filter(id=user.id).update(role='faculty')
 			group, created = Group.objects.get_or_create(name='faculty')
