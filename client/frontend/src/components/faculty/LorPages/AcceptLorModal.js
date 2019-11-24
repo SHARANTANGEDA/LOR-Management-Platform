@@ -41,17 +41,13 @@ class AcceptLorModal extends Component {
 		const {content} = this.props;
 		let imgContent = null;
 		if(this.state.image===false) {
-					console.log('here', this.state.image)
-
-			imgContent = (
-           <img src={require('../../../img/landingIcons/student.png')}
-                height='150px' width='150px' alt=''
-                   style={{maxHeight:'250px', width:'225px', borderRadius:'50%'}}/>
-        )
+			imgContent=(<img src={require('../../../img/landingIcons/student.png')}
+								height='150px' width='150px' alt={require('../../../img/landingIcons/student.png')}
+                   style={{maxHeight:'250px', width:'225px'}}/>)
 		}else {
 			imgContent=(<img src={`data:;base64,${this.state.image}`}
-								height='180px' width='120px' alt=''
-                   style={{maxHeight:'250px', maxWidth:'200px'}}/>)
+								height='180px' width='160px' alt=''
+                   style={{maxHeight:'250px', maxWidth:'225px'}}/>)
 		}
 		return (
 			<div className='row col-md-12' >

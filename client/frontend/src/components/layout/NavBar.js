@@ -83,7 +83,6 @@ handleWindowSizeChange = () => {
 
 	render() {
 		const {isAuthenticated, user} = this.props.auth;
-		const {category, errors} = this.state;
 		const authLinkO = (
 			<div className='d-flex justify-content-between align-content-end col-md-12'>
 				<div className="row col-md-6 d-flex justify-content-start align-items-center"
@@ -119,7 +118,8 @@ handleWindowSizeChange = () => {
 
 				<div className="row col-md-4 d-flex justify-content-end align-items-center" style={{color: 'white'}}>
 						<GoogleLogoutButton/>
-						<div style={{color:'white', marginLeft:'10px'}}><i className="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"/></div>
+						<div style={{color:'white', marginLeft:'10px'}}>
+							<i className="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"/></div>
 				</div>
 			</div>
 

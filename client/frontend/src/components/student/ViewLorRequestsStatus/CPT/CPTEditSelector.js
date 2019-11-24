@@ -65,21 +65,6 @@ class CPTEditSelector extends Component {
 
 	render() {
 		const {errors} = this.state;
-		const customSelectStyles = {
-			control: (base, state) => ({
-				...base,
-				height: '50px',
-				'min-height': '34px',
-				'max-height': '50px',
-				'min-width': '250px'
-			}),
-			menuList: base => ({
-				...base,
-				minHeight: '200px',
-				height: '200px',
-				minWidth: '250px'
-			}),
-		};
 		let normalHeaders = (
 			<div className="row text-center">
 						<p>

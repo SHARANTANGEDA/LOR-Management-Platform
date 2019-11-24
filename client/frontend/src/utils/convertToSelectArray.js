@@ -5,7 +5,7 @@ const convertToSelectArray = (univ) => {
 		return []
 	}
 	univ.map(item => {
-		selectArray.push({value: item.university_name, label: item.university_name})
+		return selectArray.push({value: item.university_name, label: item.university_name})
 	});
 	return selectArray;
 };

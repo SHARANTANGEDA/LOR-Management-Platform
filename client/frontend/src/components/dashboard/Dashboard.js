@@ -92,12 +92,7 @@ class Dashboard extends Component {
 
 	render() {
 		let userRole = this.props.auth.user.role;
-		let {errors} = this.state;
 		console.log({role: userRole});
-		 const signOut = dispatch => {
-		 	console.log(dispatch);
-		 	this.props.googleLogoutAction()
-    };
 		if (userRole === 'student') {
 			const {loading, studentHome} = this.props.home;
 			let homeContent;

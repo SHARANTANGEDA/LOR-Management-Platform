@@ -1,8 +1,11 @@
-from django.template import Template, Context
-from django.core.mail import send_mail
-from tracker_final.celery import app
-from student_lor.models import *
 from datetime import datetime, timezone
+
+from django.core.mail import send_mail
+from django.template import Template, Context
+
+from student_lor.models import *
+from tracker_final.celery import app
+from tracker_final.settings import EMAIL_HOST_USER
 
 REPORT_TEMPLATE = """
 Here's how you did till now:
@@ -55,7 +58,7 @@ def send_application_remainder():
 			send_mail(
 				'Reminder: 15 days to submit Lor of ' + str(details.full_name),
 				template.render(context=Context({'email': lor.user.email, 'details': details, 'left': str(15)})),
-				'ghotden@gmail.com',
+				EMAIL_HOST_USER,
 				[item.faculty.email],
 				fail_silently=False,
 			)
@@ -66,7 +69,7 @@ def send_application_remainder():
 			send_mail(
 				'Reminder: 7 days to submit Lor of ' + str(details.full_name),
 				template.render(context=Context({'email': lor.user.email, 'details': details, 'left': str(7)})),
-				'ghotden@gmail.com',
+				EMAIL_HOST_USER,
 				[item.faculty.email],
 				fail_silently=False,
 			)
@@ -77,7 +80,7 @@ def send_application_remainder():
 			send_mail(
 				'Reminder: 3 days to submit Lor of ' + str(details.full_name),
 				template.render(context=Context({'email': lor.user.email, 'details': details, 'left': str(3)})),
-				'ghotden@gmail.com',
+				EMAIL_HOST_USER,
 				[item.faculty.email],
 				fail_silently=False,
 			)
@@ -88,7 +91,7 @@ def send_application_remainder():
 			send_mail(
 				'Reminder: 1 day to submit Lor of ' + str(details.full_name),
 				template.render(context=Context({'email': lor.user.email, 'details': details, 'left': str(1)})),
-				'ghotden@gmail.com',
+				EMAIL_HOST_USER,
 				[item.faculty.email],
 				fail_silently=False,
 			)

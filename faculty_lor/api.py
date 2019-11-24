@@ -16,6 +16,7 @@ from rest_framework.views import APIView
 from student_lor.permissions import HasGroupPermission
 from student_lor.serializers import *
 from tracker_final.settings import BASE_DIR
+from tracker_final.settings import EMAIL_HOST_USER
 
 # Edit my profile
 # class EditProfile(generics.GenericAPIView):
@@ -217,7 +218,7 @@ class AcceptLorRequest(APIView):
 		send_mail(
 			'Your LOR Request has been Accepted',
 			template.render(context=Context({'faculty': faculty_details, 'student': details})),
-			'ghotden@gmail.com',
+			EMAIL_HOST_USER,
 			[student_mail['email']],
 			fail_silently=False,
 		)
@@ -245,7 +246,7 @@ class RejectLorRequest(APIView):
 		send_mail(
 			'Your LOR Request has been Rejected',
 			template.render(context=Context({'faculty': faculty_details, 'student': details})),
-			'ghotden@gmail.com',
+			EMAIL_HOST_USER,
 			[student_mail.email],
 			fail_silently=False,
 		)
@@ -273,7 +274,7 @@ class MarkRequestAsComplete(APIView):
 		send_mail(
 			'Your Letter of Recommendation is Ready',
 			template.render(context=Context({'faculty': faculty_details, 'student': details})),
-			'ghotden@gmail.com',
+			EMAIL_HOST_USER,
 			[student_mail["email"]],
 			fail_silently=False,
 		)

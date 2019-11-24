@@ -3,26 +3,11 @@ import {PropTypes} from 'prop-types'
 import {connect} from 'react-redux'
 import getLocalDate from "../../../../utils/getLocalDate"
 
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '0',
-    transform: 'translate(-50%, -50%)'
-  }
-};
 
 class LorPanel extends Component {
 
   render () {
     const {lor} = this.props;
-
-    function capitalizeFirstLetter(string) {
-      return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-    console.log(lor)
     return (
      <div id="mainbar" className='row d-flex justify-content-center'>
           <table className="table">

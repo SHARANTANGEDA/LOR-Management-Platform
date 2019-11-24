@@ -2,16 +2,6 @@ import React, {Component} from 'react'
 import {PropTypes} from 'prop-types'
 import {connect} from 'react-redux'
 
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '0',
-    transform: 'translate(-50%, -50%)'
-  }
-};
 
 class ThesisDisplayPanel extends Component {
 

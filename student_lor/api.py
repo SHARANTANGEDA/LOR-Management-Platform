@@ -15,6 +15,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from tracker_final.settings import BASE_DIR
+from tracker_final.settings import EMAIL_HOST_USER
 from .permissions import HasGroupPermission
 from .serializers import *
 from .validations.validate_lor_submission import validate_lor_submission, validate_edit_lor_submission
@@ -225,7 +226,7 @@ class EditLor(generics.GenericAPIView):
 					template.render(
 						context=Context(
 							{'faculty': faculty_details, 'student': details, 'deadline': lor_details.deadline})),
-					'ghotden@gmail.com',
+					EMAIL_HOST_USER,
 					[faculty_details["email"]],
 					fail_silently=False,
 				)
@@ -289,7 +290,7 @@ class AddFacultyForLOR(generics.GenericAPIView):
 						'New LOR Request: You got new Request with deadline on ' + str(dead_line),
 						template.render(
 							context=Context({'faculty': faculty_details, 'student': details, 'deadline': dead_line})),
-						'ghotden@gmail.com',
+						EMAIL_HOST_USER,
 						[faculty_details.email],
 						fail_silently=False,
 					)
@@ -342,7 +343,7 @@ class EditSubmittedLorCourseDetails(generics.GenericAPIView):
 					template.render(
 						context=Context(
 							{'faculty': faculty_details, 'student': details, 'deadline': dead_line})),
-					'ghotden@gmail.com',
+					EMAIL_HOST_USER,
 					[faculty_details.email],
 					fail_silently=False,
 				)
@@ -472,7 +473,7 @@ class WithdrawApplications(APIView):
 				send_mail(
 					'Request Withdrawn: Lor Request has been Withdrawn by the student',
 					template.render(context=Context({'faculty': faculty_details, 'student': details})),
-					'ghotden@gmail.com',
+					EMAIL_HOST_USER,
 					[faculty_details.email],
 					fail_silently=False,
 				)
