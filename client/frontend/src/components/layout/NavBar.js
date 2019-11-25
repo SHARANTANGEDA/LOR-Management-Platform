@@ -273,8 +273,7 @@ handleWindowSizeChange = () => {
 						{/*<img src={localStorage.getItem('google_avatar_url')} alt='' style={{maxWidth:'50px', maxHeight:'50px',borderRadius:'50%' }}/>*/}
 
 						<Link className="nav-link nav-item d-flex justify-content-around" to="" data-toggle="dropdown"
-									style={{borderRadius: '5px'}}>
-						</Link>
+									style={{borderRadius: '5px'}}>{user.email}</Link>
 					</li>
 					<li className="nav-item pull-right" style={{borderRadius: '5px'}}>
 						<GoogleLogoutButton/>
