@@ -10,6 +10,7 @@ class ThesisDisplayPanel extends Component {
 		const allFoldersContent = (thesis.map(course => (
 					<tr key={thesis.indexOf(course)}>
 						<td><span style={{fontFamily: 'Arial', fontSize: '16px'}}>{course.thesisTitle}</span></td>
+						<td><span style={{fontFamily: 'Arial', fontSize: '16px'}}>{course.sem}</span></td>
 						<td><span style={{fontFamily: 'Arial', fontSize: '16px'}}>{course.year}</span></td>
 					</tr>
 				)));
@@ -24,6 +25,7 @@ class ThesisDisplayPanel extends Component {
 							<thead>
 							<tr>
 								<th scope="col" style={{fontSize: '10pt', background: '#c1c1c1'}}>Thesis Title</th>
+								<th scope="col" style={{fontSize: '10pt', background: '#c1c1c1'}}>Semester</th>
 								<th scope="col" style={{fontSize: '10pt', background: '#c1c1c1'}}>Year</th>
 							</tr>
 							</thead>

@@ -20,8 +20,8 @@ class CoursesDisplayPanel extends Component {
 		const allFoldersContent = (courses.map(course => (
 					<tr key={courses.indexOf(course)}>
 						<td><span style={{fontFamily: 'Arial', fontSize: '16px'}}>{course.courseCode}</span></td>
-						<td><span style={{fontFamily: 'Arial', fontSize: '16px'}}>{course.year}</span></td>
 						<td><span style={{fontFamily: 'Arial', fontSize: '16px'}}>{course.sem}</span></td>
+						<td><span style={{fontFamily: 'Arial', fontSize: '16px'}}>{course.year}</span></td>
 					</tr>
 				)));
     return (
@@ -35,8 +35,8 @@ class CoursesDisplayPanel extends Component {
 							<thead>
 							<tr>
 								<th scope="col" style={{fontSize: '10pt', background: '#c1c1c1'}}>Course Code</th>
-								<th scope="col" style={{fontSize: '10pt', background: '#c1c1c1'}}>Year</th>
 								<th scope="col" style={{fontSize: '10pt', background: '#c1c1c1'}}>Semester</th>
+								<th scope="col" style={{fontSize: '10pt', background: '#c1c1c1'}}>Year</th>
 							</tr>
 							</thead>
 							<tbody>

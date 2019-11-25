@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7022dd86-529b-4f3e-99a4-b2159242c198" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/AcceptLorModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/AcceptLorModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/hod/UserControl/ViewStudentProfileModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/hod/UserControl/ViewStudentProfileModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/tabPanels/CoursesDisplayPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/tabPanels/CoursesDisplayPanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/tabPanels/ProjectsDisplayPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/tabPanels/ProjectsDisplayPanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/tabPanels/ThesisDisplayPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/tabPanels/ThesisDisplayPanel.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -277,7 +278,7 @@
       <workItem from="1573619256954" duration="7146000" />
       <workItem from="1574512748612" duration="12314000" />
       <workItem from="1574561145781" duration="4003000" />
-      <workItem from="1574645216263" duration="1572000" />
+      <workItem from="1574645216263" duration="2084000" />
     </task>
     <task id="LOCAL-00001" summary="#Initial Commit&#10;#Completed Authentication&#10;#Created add_lor and User Models">
       <created>1565873737853</created>
@@ -412,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574645932868</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="# Final Commit&#10;# Beta Release Version&#10;# Fixed view profile in faculty and hod">
+      <created>1574646960573</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1574646960573</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +457,8 @@
     <MESSAGE value="# Completed All UI Changes for HOD&#10;# Completed All UI Changes for Faculty&#10;# Completed All UI Changes for Student&#10;# Removed few security bugs&#10;# Alpha Release Version" />
     <MESSAGE value="# Added Google OAuth&#10;# Alpha Release Version" />
     <MESSAGE value="# Final Commit&#10;# Beta Release Version" />
-    <option name="LAST_COMMIT_MESSAGE" value="# Final Commit&#10;# Beta Release Version" />
+    <MESSAGE value="# Final Commit&#10;# Beta Release Version&#10;# Fixed view profile in faculty and hod" />
+    <option name="LAST_COMMIT_MESSAGE" value="# Final Commit&#10;# Beta Release Version&#10;# Fixed view profile in faculty and hod" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="masterDetails">
