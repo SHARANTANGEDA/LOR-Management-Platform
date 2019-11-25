@@ -24,8 +24,10 @@ class ViewStudentProfileModal extends Component {
       imageData= response.data;
       if(imageData.status===false) {
         this.setState({image: false})
-      }
-      this.setState( {image:imageData})
+      }else {
+      	this.setState( {image:imageData})
+			}
+
     })
 }
 	onReject() {

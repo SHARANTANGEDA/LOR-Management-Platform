@@ -24,8 +24,10 @@ class AcceptLorModal extends Component {
       imageData= response.data;
       if(imageData.status===false) {
         this.setState({image: false})
-      }
-      this.setState( {image:imageData})
+      }else {
+      	this.setState( {image:imageData})
+			}
+
     })
 }
 	onReject() {
@@ -41,14 +43,17 @@ class AcceptLorModal extends Component {
 		const {content} = this.props;
 		let imgContent = null;
 		if(this.state.image===false) {
+			console.log('here check')
 			imgContent=(<img src={require('../../../img/landingIcons/student.png')}
 								height='150px' width='150px' alt={require('../../../img/landingIcons/student.png')}
                    style={{maxHeight:'250px', width:'225px'}}/>)
 		}else {
+			console.log('check here')
 			imgContent=(<img src={`data:;base64,${this.state.image}`}
 								height='180px' width='160px' alt=''
                    style={{maxHeight:'250px', maxWidth:'225px'}}/>)
 		}
+		console.log(imgContent)
 		return (
 			<div className='row col-md-12' >
 				<div className='col-md-3'>

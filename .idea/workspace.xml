@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7022dd86-529b-4f3e-99a4-b2159242c198" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/layout/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/layout/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/AcceptLorModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/AcceptLorModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/hod/UserControl/ViewStudentProfileModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/hod/UserControl/ViewStudentProfileModal.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -276,7 +277,7 @@
       <workItem from="1573619256954" duration="7146000" />
       <workItem from="1574512748612" duration="12314000" />
       <workItem from="1574561145781" duration="4003000" />
-      <workItem from="1574645216263" duration="585000" />
+      <workItem from="1574645216263" duration="1572000" />
     </task>
     <task id="LOCAL-00001" summary="#Initial Commit&#10;#Completed Authentication&#10;#Created add_lor and User Models">
       <created>1565873737853</created>
@@ -404,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574587992102</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="# Final Commit&#10;# Beta Release Version">
+      <created>1574645932868</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1574645932868</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
