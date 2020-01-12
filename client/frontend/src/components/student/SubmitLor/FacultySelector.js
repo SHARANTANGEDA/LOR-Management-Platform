@@ -13,6 +13,7 @@ import ReactTable from "react-table";
 import matchSorter from "match-sorter";
 import formatFacultySelector from "./formatFacultySelector";
 import "react-table/react-table.css";
+import CPTSelectorNew from "./CPT/CPTSelectorNew";
 
 const customStyles = {
 	content: {
@@ -22,7 +23,7 @@ const customStyles = {
 		bottom: '5%',
 		marginRight: '0',
 		transform: 'translate(-0%, -0%)',
-		backgroundColor: 'rgba(255,167,38,0.8)'
+		backgroundColor: 'rgb(255,255,255)'
 	},
 };
 
@@ -53,7 +54,9 @@ class FacultySelector extends Component {
 			projects_done: [],
 			thesis_done: [],
 			status: false,
-			others: ''
+			others: '',
+			strengths: '',
+			comments: ''
 		};
     getSelected.push(data);
     this.props.checkbox.selected = getSelected;
@@ -110,7 +113,7 @@ class FacultySelector extends Component {
 					</div>
 					{displayAllEmptyMess}
 					<div className='row'>
-						<CPTSelector facultyId={this.state.currentFid} selectionIndex={this.state.currentIndex} />
+						<CPTSelectorNew facultyId={this.state.currentFid} selectionIndex={this.state.currentIndex} />
 					</div>
 				</div>
 			);

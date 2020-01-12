@@ -99,7 +99,7 @@ class SubmitLor extends Component {
 		}
 		e.preventDefault();
 		let dataArray = convertToBackendFormat(this.state.lorId, this.props.checkbox.selected);
-		console.log({data: dataArray})
+		console.log({data: dataArray});
 		this.setState({submitSpinner: true});
 		this.props.submitLor(dataArray);
 	}
@@ -134,7 +134,7 @@ class SubmitLor extends Component {
 										fontSize: '25px', background: '#000d69', color: 'white'
 									}}>
 						Step-1: Select the LOR You want to use<i className="fas fa-angle-down"/></button>
-					<Collapse isOpened={this.state.isLorSelectorOpen} style={{listStyleType: 'none', minWidth:'100%'}}>
+					<Collapse isOpened={this.state.isLorSelectorOpen} style={{listStyleType: 'none'}}>
 						<LorSelector/>
 						<div className='row d-flex justify-content-end' style={{margin: '5px'}}>
 							<button onClick={this.onSelectLor} className='btn btn-primary d-flex justify-content-center'>Confirm Lor
@@ -179,12 +179,14 @@ class SubmitLor extends Component {
 									fontSize: '25px', background: '#000d69', color: 'white'
 								}}>Apply For Letter of Recommendation
 							</button>
-					<div className='row d-flex justify-content-center'>
-						{selectLorCode}
-					</div>
-					<div className='row d-flex justify-content-center'>
-						{selectFacultyCode}
-					</div>
+					{!this.state.makeLorSelectorInvisible ? selectLorCode:selectFacultyCode}
+					{/*<div className='row d-flex justify-content-center'>*/}
+					{/*	/!*{selectLorCode}*!/*/}
+					{/*	*/}
+					{/*</div>*/}
+					{/*<div className='row d-flex justify-content-center'>*/}
+					{/*	{selectFacultyCode}*/}
+					{/*</div>*/}
 					<Modal
 					isOpen={this.state.submitSpinner}
 					onAfterOpen={this.afterOpenModal}

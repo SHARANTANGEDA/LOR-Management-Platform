@@ -40,7 +40,9 @@
     "react-table": "^6.10.3",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "url-search-params": "^1.1.0"
+    "url-search-params": "^1.1.0",
+    "classnames": "latest",
+    "react": "latest"
   },
   "scripts": {
     "start": "HTTPS=true react-scripts start",

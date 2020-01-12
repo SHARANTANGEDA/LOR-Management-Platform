@@ -58,18 +58,6 @@ class CPTSelector extends Component {
 		this.props.checkbox.selected[this.props.selectionIndex].others='';
 
 	}
-	// onUnSelect(e) {
-	// 	this.setState({selected: false});
-	// 	let unSelect = this.props.checkbox.selected;
-	// 	// let index=-1;
-	// 	unSelect = unSelect.filter(item => item.faculty_id !== e);
-	// 	// let index = unSelect.indexOf(e);
-	// 	// if (index !== -1) {
-	// 	//   unSelect.splice(index, 1);
-	// 	// }
-	// 	this.props.checkbox.selected = unSelect;
-	// 	console.log({selected: this.props.checkbox.selected})
-	// }
 
 	codeSelect(e) {
 		this.setState({campusCode: e})

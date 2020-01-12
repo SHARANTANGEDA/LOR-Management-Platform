@@ -54,6 +54,8 @@ class FacultyListLor(models.Model):
 										  choices=[('AP', 'Applied'), ('AC', 'Accepted'), ('RE', 'Rejected'), ('CO', 'Completed'), ('EX', 'Expired')],
 										  default='AP')
 	others = models.CharField(max_length=500, blank=True)
+	strengths = models.CharField(max_length=750, blank=True)
+	comments = models.CharField(max_length=750, blank=True)
 	created_at = models.DateTimeField(auto_now_add=True, null=False)
 	updated_at = models.DateTimeField(auto_now=True, null=False)
 	days_15 = models.BooleanField(editable=True, default=False)

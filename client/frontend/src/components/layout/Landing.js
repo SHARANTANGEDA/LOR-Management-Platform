@@ -139,7 +139,7 @@ class Landing extends Component {
                                             <button onClick={this.openModal}
                                                   className='btn btn-info btn-block mt-4'>
                                                 Register</button>
-                                        </div>
+                                        </  div>
                                     </div>
                                     <hr/>
                                 </form>

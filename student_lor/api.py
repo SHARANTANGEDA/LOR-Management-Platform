@@ -279,8 +279,11 @@ class AddFacultyForLOR(generics.GenericAPIView):
 						projects_done=validated_data['projects_done'],
 						thesis_done=validated_data['thesis_done'],
 						status=validated_data['status'],
-						others=validated_data['others']
+						others=validated_data['others'],
+						strengths=validated_data['strengths'],
+						comments=validated_data['comments'],
 					)
+					print(entry)
 					template = Template(APPLICATION_TEMPLATE)
 					faculty_details = AppUser.objects.get(id=validated_data['faculty_id'])
 					details = StudentDetails.objects.get(user=self.request.user.id)

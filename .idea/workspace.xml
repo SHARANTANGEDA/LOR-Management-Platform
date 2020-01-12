@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7022dd86-529b-4f3e-99a4-b2159242c198" name="Default Changelist" comment="">
+    <list default="true" id="7022dd86-529b-4f3e-99a4-b2159242c198" name="Default Changelist" comment="# Final Commit&#10;# Beta Release Version&#10;# Fixed view profile in faculty and hod&#10;# Fixed few view Course profiles">
+      <change afterPath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT/CPTSelectorNew.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_lor/migrations/0003_auto_20200112_1827.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/tabPanels/CoursesDisplayPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/tabPanels/CoursesDisplayPanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/tabPanels/ProjectsDisplayPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/tabPanels/ProjectsDisplayPanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/tabPanels/ThesisDisplayPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/tabPanels/ThesisDisplayPanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/layout/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/layout/Landing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT/CPTSelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT/CPTSelector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT/CoursesDone.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT/CoursesDone.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT/ProjectsDone.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT/ProjectsDone.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT/ThesisDone.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT/ThesisDone.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/FacultySelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/FacultySelector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/SubmitLor.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/SubmitLor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/utils/convertToBackendFormat.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/utils/convertToBackendFormat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_lor/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_lor/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_lor/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_lor/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +79,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="11.10.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/frontend/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -81,19 +91,19 @@
     <property name="ts.external.directory.path" value="/usr/local/lib/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT" />
+      <recent name="$PROJECT_DIR$/client/frontend/public" />
+      <recent name="$PROJECT_DIR$/frontend" />
+      <recent name="$PROJECT_DIR$/frontend/frontend/src/components/hod/UserControl" />
+      <recent name="$PROJECT_DIR$/frontend/frontend/src/components/hod/LorPages" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/api/google" />
       <recent name="$PROJECT_DIR$/frontend/frontend/src/components/hod/UserControl" />
       <recent name="$PROJECT_DIR$/frontend/frontend/src/components/hod/LorPages" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/frontend/public" />
-      <recent name="$PROJECT_DIR$/frontend" />
-      <recent name="$PROJECT_DIR$/frontend/frontend/src/components/hod/UserControl" />
-      <recent name="$PROJECT_DIR$/frontend/frontend/src/components/hod/LorPages" />
-      <recent name="$PROJECT_DIR$/frontend/frontend/src/components/dashboard" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -278,7 +288,15 @@
       <workItem from="1573619256954" duration="7146000" />
       <workItem from="1574512748612" duration="12314000" />
       <workItem from="1574561145781" duration="4003000" />
-      <workItem from="1574645216263" duration="2084000" />
+      <workItem from="1574645216263" duration="2316000" />
+      <workItem from="1574654485717" duration="367000" />
+      <workItem from="1574661617797" duration="652000" />
+      <workItem from="1574858160867" duration="676000" />
+      <workItem from="1575781765221" duration="4149000" />
+      <workItem from="1576073113346" duration="7105000" />
+      <workItem from="1576373582926" duration="67000" />
+      <workItem from="1577976274144" duration="517000" />
+      <workItem from="1578838646055" duration="11326000" />
     </task>
     <task id="LOCAL-00001" summary="#Initial Commit&#10;#Completed Authentication&#10;#Created add_lor and User Models">
       <created>1565873737853</created>
@@ -420,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574646960573</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="# Final Commit&#10;# Beta Release Version&#10;# Fixed view profile in faculty and hod&#10;# Fixed few view Course profiles">
+      <created>1574647465945</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1574647465945</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,7 +483,8 @@
     <MESSAGE value="# Added Google OAuth&#10;# Alpha Release Version" />
     <MESSAGE value="# Final Commit&#10;# Beta Release Version" />
     <MESSAGE value="# Final Commit&#10;# Beta Release Version&#10;# Fixed view profile in faculty and hod" />
-    <option name="LAST_COMMIT_MESSAGE" value="# Final Commit&#10;# Beta Release Version&#10;# Fixed view profile in faculty and hod" />
+    <MESSAGE value="# Final Commit&#10;# Beta Release Version&#10;# Fixed view profile in faculty and hod&#10;# Fixed few view Course profiles" />
+    <option name="LAST_COMMIT_MESSAGE" value="# Final Commit&#10;# Beta Release Version&#10;# Fixed view profile in faculty and hod&#10;# Fixed few view Course profiles" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="masterDetails">

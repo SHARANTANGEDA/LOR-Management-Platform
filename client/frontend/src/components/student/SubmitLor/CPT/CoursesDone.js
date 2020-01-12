@@ -13,20 +13,23 @@ class CoursesDone extends Component {
 			courses: [{
 				courseCode: '',
 				sem: '',
-				year: ''
+				year: '',
+				grade: ''
 			}],
 			courseCnt: 1,
 			semesters: ['sem-0'],
 			years: ['year-0'],
 			courseCodes: ['course-0'],
+			grades: ['grade-0'],
 			yearsControl: [],
 			semControl: [],
+			gradesControl: [],
 			errors: {}
 		};
 		this.changeHandler = this.changeHandler.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
 		this.onAddCourse = this.onAddCourse.bind(this);
-		this.onRemove=this.onRemove.bind(this)
+		this.onRemove = this.onRemove.bind(this)
 	}
 
 
@@ -51,58 +54,88 @@ class CoursesDone extends Component {
 			let semChange = this.state.semControl;
 			semChange[i] = e;
 			this.setState({semControl: semChange})
+		} else if (type === 'grade') {
+			coursesHandler[i].grade = e.target.value;
 		}
 		this.setState({
 			courses: coursesHandler
 		});
 		let getSelected = this.props.checkbox.selected;
 		console.log(getSelected, this.props.selectionIndex);
-		getSelected[this.props.selectionIndex].courses_done=coursesHandler;
+		getSelected[this.props.selectionIndex].courses_done = coursesHandler;
 		this.props.checkbox.selected = getSelected;
-		console.log({
-			STATE_LOG: {
-				courses: this.state.courses, handler: coursesHandler, yearsControl: this.state.yearsControl,
-				semControl: this.state.semControl
+		// console.log({
+		// 	STATE_LOG: {
+		// 		courses: this.state.courses, handler: coursesHandler, yearsControl: this.state.yearsControl,
+		// 		semControl: this.state.semControl
+		// 	}
+		// })
+	};
+
+	componentDidMount() {
+		let len = this.props.checkbox.selected[this.props.selectionIndex].courses_done.length
+		if (len !== 0) {
+			let newCourseArray = this.state.courseCodes, newSemArray = this.state.semesters, newYearArray = this.state.years,
+				newGradesArray = this.state.grades, semControl = [], yearControl = [];
+			for (let i = 0; i < len; i++) {
+				newCourseArray.push('course-' + this.state.courseCnt);
+				newYearArray.push('year-' + this.state.courseCnt);
+				newSemArray.push('sem-' + this.state.courseCnt);
+				newGradesArray.push('grade-' + this.state.courseCnt);
+				semControl.push({'label':this.props.checkbox.selected[this.props.selectionIndex].courses_done[i].sem,
+					'value': this.props.checkbox.selected[this.props.selectionIndex].courses_done[i].sem});
+				yearControl.push({'label':this.props.checkbox.selected[this.props.selectionIndex].courses_done[i].year,
+					'value': this.props.checkbox.selected[this.props.selectionIndex].courses_done[i].year})
 			}
-		})
+			this.setState({
+				courseCnt: this.state.courseCnt + 1,
+				semesters: newSemArray,
+				years: newYearArray,
+				courseCodes: newCourseArray,
+				courses: this.props.checkbox.selected[this.props.selectionIndex].courses_done,
+				grades: newGradesArray,
+				semControl: semControl,
+				yearsControl: yearControl
+			})
+		}
 	}
-	// componentDidMount(){
-	// 	this.setState({front_errors: this.props.front_errors})
-	//
-	// }
 
 
 	onRemove(index) {
-				console.log({Component:'mounted'})
-
-		if(this.state.courseCnt===1) {
-			this.setState({courses: [{
-				courseCode: '',
-				sem: '',
-				year: ''
-			}],
-			semesters: ['sem-0'],
-			years: ['year-0'],
-			courseCodes: ['course-0'],});
+		if (this.state.courseCnt === 1) {
+			this.setState({
+				courses: [{
+					courseCode: '',
+					sem: '',
+					year: '',
+					grade: ''
+				}],
+				semesters: ['sem-0'],
+				years: ['year-0'],
+				courseCodes: ['course-0'], grades: ['grade-0'],
+			});
 			let getSelected = this.props.checkbox.selected;
-		getSelected[this.props.selectionIndex].courses_done=this.state.courses;
-		this.props.checkbox.selected = getSelected
-		}else {
+			getSelected[this.props.selectionIndex].courses_done = this.state.courses;
+			this.props.checkbox.selected = getSelected
+		} else {
 			this.state.courses.splice(index, 1);
 			this.state.courseCodes.splice(index, 1);
-			this.state.semesters.splice(index,1);
-			this.state.years.splice(index,1);
-			this.setState({courses:this.state.courses,
-		years: this.state.years,courseCnt:this.state.courseCnt - 1,
-			courseCodes: this.state.courseCodes,
-			semesters: this.state.semesters
-		});
-		let getSelected = this.props.checkbox.selected;
-		getSelected[this.props.selectionIndex].courses_done=this.state.courses;
-		this.props.checkbox.selected = getSelected
+			this.state.semesters.splice(index, 1);
+			this.state.years.splice(index, 1);
+			this.state.grades.splice(index, 1);
+			this.setState({
+				courses: this.state.courses, grades: this.state.grades,
+				years: this.state.years, courseCnt: this.state.courseCnt - 1,
+				courseCodes: this.state.courseCodes,
+				semesters: this.state.semesters
+			});
+			let getSelected = this.props.checkbox.selected;
+			getSelected[this.props.selectionIndex].courses_done = this.state.courses;
+			this.props.checkbox.selected = getSelected
 		}
 
 	}
+
 	// componentWillReceiveProps(nextProps, nextContext) {
 	// 	if (nextProps) {
 	// 		this.setState({errors: nextProps.errors})
@@ -111,28 +144,31 @@ class CoursesDone extends Component {
 
 	onAddCourse() {
 		let newCourseArray = this.state.courseCodes, newSemArray = this.state.semesters, newYearArray = this.state.years,
-			newCourses = this.state.courses;
+			newCourses = this.state.courses, newGradesArray = this.state.grades;
 		newCourseArray.push('course-' + this.state.courseCnt);
 		newYearArray.push('year-' + this.state.courseCnt);
 		newSemArray.push('sem-' + this.state.courseCnt);
+		newGradesArray.push('grade-' + this.state.courseCnt);
 		newCourses.push({
 			courseCode: '',
 			sem: '',
-			year: ''
+			year: '',
+			grade: ''
 		});
 		this.setState({
 			courseCnt: this.state.courseCnt + 1,
 			semesters: newSemArray,
 			years: newYearArray,
 			courseCodes: newCourseArray,
-			courses: newCourses
+			courses: newCourses,
+			grades: newGradesArray
 		})
 
 	}
 
 	onSubmit(e) {
 		let getSelected = this.props.checkbox.selected;
-		getSelected[this.props.selectionIndex].courses_done=this.state.courses;
+		getSelected[this.props.selectionIndex].courses_done = this.state.courses;
 		this.props.checkbox.selected = getSelected
 	}
 
@@ -144,54 +180,62 @@ class CoursesDone extends Component {
 				height: '50px',
 				'min-height': '34px',
 				'max-height': '50px',
-				'min-width': '180px'
+				'min-width': '250px'
 			}),
 			menuList: base => ({
 				...base,
 				minHeight: '200px',
 				height: '200px',
-				minWidth: '180px'
+				minWidth: '250px'
 			}),
 		};
 		let yearSelector = getYearsForSelector();
 		let inputs = [];
 		for (let i = 0; i < this.state.courses.length; i++) {
-			let errors={};
-			console.log({EDIT: this.state.courses[i],LEN: this.state.courses.length})
-			if(this.props.checkbox.errors && this.props.checkbox.errors.courses_done &&
+			let errors = {};
+			if (this.props.checkbox.errors && this.props.checkbox.errors.courses_done &&
 				this.props.checkbox.errors.courses_done[i]) {
-				errors=this.props.checkbox.errors.courses_done[i]
+				errors = this.props.checkbox.errors.courses_done[i]
 			}
-			inputs.push(<div className='row' style={{margin:'3px'}} key={i}>
+			inputs.push(<div className='row' style={{margin: '3px', borderRadius: '5px', borderStyle: 'solid'}} key={i}>
 				<div className='row d-flex justify-content-between col-md-12'>
-								<h6>Course {i+1}:</h6>
+					<h5 className='text-center'>Course {i + 1}:</h5>
 					<button onClick={() => this.onRemove(i)}
-									style={{background:'none', color:'black', borderStyle:'none'}}><i className="fas fa-times"/></button>
+									style={{borderRadius: '3px', background: 'red', color: 'white', borderStyle: 'none'}}><i
+						className="fas fa-times"/></button>
 				</div>
 				<div className='row'>
-					<div className='col-md-12'>
+					<div className='col-md-6'>
+						<label>Course Code:</label>
 						<TextFieldGroup placeholder="Enter Course Code" error={errors.courseCode}
-												type="text" onChange={this.changeHandler(i, 'courseCode')}
-												value={this.state.courses[i].courseCode}
-												name={this.state.courseCodes[i]}/>
+														type="text" onChange={this.changeHandler(i, 'courseCode')}
+														value={this.state.courses[i].courseCode}
+														name={this.state.courseCodes[i]}/>
 					</div>
-
+					<div className='col-md-6'>
+						<label>Grade:</label>
+						<TextFieldGroup placeholder="Enter your Grade" error={errors.grade}
+														type="number" onChange={this.changeHandler(i, 'grade')}
+														value={this.state.courses[i].grade}
+														name={this.state.grades[i]}/>
+					</div>
 				</div>
 				<div className='row'>
-					<div className='col-md-6' style={{marginRight:'2px'}}>
+					<div className='col-md-6'>
+						<label>Select Year:</label>
 						<Select options={yearSelector}
-										className={classnames('isSearchable', {'is-invalid':errors.year})}
+										className={classnames('isSearchable', {'is-invalid': errors.year})}
 										styles={customSelectStyles}
 										placeholder="Select year"
 										name={this.state.years[i]} value={this.state.yearsControl[i]}
 										onChange={this.changeHandler(i, 'year')}>
 						</Select>
 						{errors.year && (
-              <div className="invalid-feedback">{errors.year}</div>
-            )}
+							<div className="invalid-feedback">{errors.year}</div>
+						)}
 					</div>
-
-					<div className='col-md-6' >
+					<div className='col-md-6'>
+						<label>Select Semester:</label>
 						<Select options={[{value: 'Sem-I', label: 'Sem-I'}, {value: 'Sem-II', label: 'Sem-II'}]}
 										className={classnames('isSearchable', {'is-invalid': errors.sem})}
 										styles={customSelectStyles}
@@ -200,30 +244,21 @@ class CoursesDone extends Component {
 										onChange={this.changeHandler(i, 'sem')}>
 						</Select>
 						{errors.sem && (
-              <div className="invalid-feedback">{errors.sem}</div>
-            )}
+							<div className="invalid-feedback">{errors.sem}</div>
+						)}
 					</div>
 				</div>
-				<hr/>
 			</div>)
 		}
 		return (
 			<div className="LoginModal container-fluid col-md-12">
-					{/*<h3>Add Courses, projects or thesis done with faculty</h3>*/}
-					{/*<div className="row text-center">*/}
-					{/*	<p>*/}
-					{/*		It is recommended that you do at least one of the following for Lor Request to be accepted*/}
-					{/*	</p>*/}
-					{/*	<hr/>*/}
-					{/*</div>*/}
-					{inputs}
-					<div className="row text-center d-flex justify-content-center">
-						<button type="submit" onClick={this.onAddCourse} className="btn-sm  text-center"
-										style={{background: 'green', color: 'white', borderRadius: '5px'}}>
-							<i className="fas fa-plus"/>Add another Course
-						</button>
-
-					</div>
+				{inputs}
+				<div className="row text-center d-flex justify-content-center">
+					<button type="submit" onClick={this.onAddCourse} className="btn-sm  text-center"
+									style={{background: 'green', color: 'white', borderRadius: '5px'}}>
+						<i className="fas fa-plus"/>Add another Course
+					</button>
+				</div>
 			</div>
 		);
 	}
