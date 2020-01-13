@@ -22,6 +22,9 @@ const validateLorSubmission = data => {
 				if(item.year===null || item.year==='' || item.year.length===0) {
 					errors.courses_done[data.courses_done.indexOf(item)].year="You must select the year"
 				}
+				if(item.grade===null || item.grade==='' || item.grade.length===0) {
+					errors.courses_done[data.courses_done.indexOf(item)].grade="Enter your grade"
+				}
 			})
 		}
 		if(data.projects_done.length!==0) {
@@ -35,6 +38,9 @@ const validateLorSubmission = data => {
 				if(item.sem===null || item.sem==='' || item.sem.length===0) {
 					errors.projects_done[data.projects_done.indexOf(item)].sem="You must select the semester"
 				}
+				if(item.grade===null || item.grade==='' || item.grade.length===0) {
+					errors.projects_done[data.projects_done.indexOf(item)].grade="Enter your grade"
+				}
 			})
 		}
 		if(data.thesis_done.length!==0) {
@@ -47,6 +53,9 @@ const validateLorSubmission = data => {
 				}
 				if(item.sem===null || item.sem==='' || item.sem.length===0) {
 					errors.thesis_done[data.thesis_done.indexOf(item)].sem="You must select the semester"
+				}
+				if(item.grade===null || item.grade==='' || item.grade.length===0) {
+					errors.thesis_done[data.thesis_done.indexOf(item)].grade="Enter your grade"
 				}
 			})
 		}

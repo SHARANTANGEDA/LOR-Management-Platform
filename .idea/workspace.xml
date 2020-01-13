@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7022dd86-529b-4f3e-99a4-b2159242c198" name="Default Changelist" comment="# Final Commit&#10;# Beta Release Version&#10;# Fixed view profile in faculty and hod&#10;# Fixed few view Course profiles">
-      <change afterPath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT/CPTSelectorNew.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_lor/migrations/0003_auto_20200112_1827.py" afterDir="false" />
+    <list default="true" id="7022dd86-529b-4f3e-99a4-b2159242c198" name="Default Changelist" comment="# Final Commit&#10;# Beta Release Version&#10;# Added grade input validation&#10;# Fixed all known bugs&#10;#">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/layout/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/layout/Landing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT/CPTSelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT/CPTSelector.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT/CoursesDone.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT/CoursesDone.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT/ProjectsDone.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT/ProjectsDone.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT/ThesisDone.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT/ThesisDone.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/FacultySelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/FacultySelector.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/SubmitLor.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/SubmitLor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/utils/convertToBackendFormat.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/utils/convertToBackendFormat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_lor/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_lor/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_lor/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_lor/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/MyAccount/EditProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/MyAccount/EditProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/dashboard/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/dashboard/studentDashboard/StudentHomeFeedTable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/ModalTabContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/ModalTabContents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/upload/UploadFiles.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/upload/UploadFiles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/validation/validateLorSubmission.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/validation/validateLorSubmission.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -296,7 +289,8 @@
       <workItem from="1576073113346" duration="7105000" />
       <workItem from="1576373582926" duration="67000" />
       <workItem from="1577976274144" duration="517000" />
-      <workItem from="1578838646055" duration="11326000" />
+      <workItem from="1578838646055" duration="11671000" />
+      <workItem from="1578891699064" duration="4991000" />
     </task>
     <task id="LOCAL-00001" summary="#Initial Commit&#10;#Completed Authentication&#10;#Created add_lor and User Models">
       <created>1565873737853</created>
@@ -445,7 +439,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574647465945</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="# Final Commit&#10;# Beta Release Version&#10;# Added Strengths and Comments to applications&#10;#Added required fields to the database&#10;# Added grade entry field for student&#10;#TODO Validation of grades">
+      <created>1578854408193</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1578854408193</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +485,8 @@
     <MESSAGE value="# Final Commit&#10;# Beta Release Version" />
     <MESSAGE value="# Final Commit&#10;# Beta Release Version&#10;# Fixed view profile in faculty and hod" />
     <MESSAGE value="# Final Commit&#10;# Beta Release Version&#10;# Fixed view profile in faculty and hod&#10;# Fixed few view Course profiles" />
-    <option name="LAST_COMMIT_MESSAGE" value="# Final Commit&#10;# Beta Release Version&#10;# Fixed view profile in faculty and hod&#10;# Fixed few view Course profiles" />
+    <MESSAGE value="# Final Commit&#10;# Beta Release Version&#10;# Added Strengths and Comments to applications&#10;#Added required fields to the database&#10;# Added grade entry field for student&#10;#TODO Validation of grades" />
+    <option name="LAST_COMMIT_MESSAGE" value="# Final Commit&#10;# Beta Release Version&#10;# Added Strengths and Comments to applications&#10;#Added required fields to the database&#10;# Added grade entry field for student&#10;#TODO Validation of grades" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="masterDetails">

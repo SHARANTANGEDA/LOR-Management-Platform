@@ -122,7 +122,7 @@ class Dashboard extends Component {
 						<ul style={{listStyleType:'square', lineHeight: '50px', fontSize: '12pt', fontWeight:'bold'}}>
 							<li>This site allows you to apply for Letter of Recommendation under multiple faculty</li>
 							<li>This site currently allows you to apply for LOR under Computer Science faculty only</li>
-							<li>It is advised to take word of consent from the faculty before applying for LOR Here</li>
+							<li>It is advised to take word of consent from the faculty before applying for LOR here</li>
 							<li>When you apply for Lor here, it is not guaranteed that you will get one, it is entirely upto
 								individual faculty</li>
 							<li>This site is not managed by AUGSD, any queries should be dealt with Computer Science & Information Systems Department</li>

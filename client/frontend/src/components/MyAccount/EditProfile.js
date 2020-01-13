@@ -9,6 +9,7 @@ import Select from 'react-select'
 import {Collapse} from 'react-collapse'
 // import './switch.css'
 import UploadFiles from "../upload/UploadFiles";
+import CreatableSelect from "react-select/lib/Creatable";
 
 class EditProfile extends Component {
 	constructor(props) {
@@ -188,14 +189,13 @@ class EditProfile extends Component {
 															{/*<label className='d-flex justify-content-start */}
                               {/*                           '></label>*/}
 							<label className='d-flex justify-content-start align-items-center'
-																	 htmlFor="degree"><h6>Select your highest degree{' '}</h6></label>
-															<Select options={degreeOptions}
-																			className={classnames('isSearchable', {'is-invalid': errors.degree})}
-																			styles={customSelectStyles}
-																			placeholder="Select your graduation degree"
-																			name="degree" value={this.state.degree}
-																			onChange={this.onCatChange}>
-															</Select>
+																	 htmlFor="degree"><h6>Select your highest degree{' '}</h6><p style={{color: "red"}}>*</p></label>
+							<CreatableSelect isClearable options={degreeOptions} className={classnames("isSearchable w-100", {'is-invalid': errors.degree})}
+																			 styles={customSelectStyles}
+																			 placeholder=""
+																			 name="degree" value={this.state.degree}
+																			 onChange={this.onCatChange}>
+											</CreatableSelect>
 						</div>
 					)
 				}else {
@@ -206,7 +206,7 @@ class EditProfile extends Component {
                             {/*                                 align-items-center'>Expected Year of Graduation</h6>*/}
 														{/*</div>*/}
 															<label className='d-flex justify-content-start align-items-center'
-																	 htmlFor="degree"><h6>Expected Year of Graduation:{' '}</h6></label>
+																	 htmlFor="degree"><h6>Expected Year of Graduation:{' '}</h6><p style={{color: "red"}}>*</p></label>
 															<TextFieldGroup
 															placeholder="Ex. 2021"
 															error={errors.degree}
@@ -221,12 +221,9 @@ class EditProfile extends Component {
 				profileContent = (
 					<div className='App-content row d-flex justify-content-center'>
 						<div className="row col-md-12">
-							<div className='col-md-12 ' style={{
-								borderRadius: '5px', borderColor: 'black', borderStyle: 'solid',
-								padding: '0px'
-							}}>
-								<div className="row col-md-12 m-auto">
-									<div className="col-sm-12 text-center" style={{color: 'black'}}>
+							<div className='col-md-12 ' >
+								{/*<div className="row col-md-12 m-auto">*/}
+									<div className="col-md-12 text-center">
 										<button onClick={this.toggleProfile}
 														className="rounded border
                                                 d-flex justify-content-between align-items-center
@@ -242,9 +239,9 @@ class EditProfile extends Component {
 												<div className='row'>
 													<div className="form-group col-md-5">
 														<label className='d-flex justify-content-start'
-																	 htmlFor="email"><h6>Email Address</h6></label>
+																	 htmlFor="email"><h6>Personal Email Address</h6><p style={{color: "red"}}>*</p></label>
 														<TextFieldGroup
-															placeholder="Please enter your personal Email Address"
+															placeholder="ex.john@email.com"
 															error={errors.email}
 															type="text" onChange={this.onChange}
 															value={this.state.email}
@@ -253,9 +250,9 @@ class EditProfile extends Component {
 													</div>
 													<div className="form-group col-md-5">
 														<label className='d-flex justify-content-start'
-																	 htmlFor="full_name"><h6>Full Name</h6></label>
+																	 htmlFor="full_name"><h6>Full Name as per Records</h6><p style={{color: "red"}}>*</p></label>
 														<TextFieldGroup
-															placeholder="Enter your full name as per Records"
+															placeholder="ex.James Tiberius Kirk"
 															error={errors.full_name}
 															type="text" onChange={this.onChange}
 															value={this.state.full_name}
@@ -264,11 +261,11 @@ class EditProfile extends Component {
 													</div>
 													<div className="form-group col-md-2">
 														<label className='d-flex justify-content-start'
-																	 htmlFor="cgpa"><h6>CGPA/GPA</h6></label>
+																	 htmlFor="cgpa"><h6>CGPA/GPA out of 10</h6><p style={{color: "red"}}>*</p></label>
 
-														<TextFieldGroup placeholder="CGPA out of 10"
+														<TextFieldGroup placeholder="ex. 8.5"
 																						error={errors.cgpa}
-																						type="text" onChange={this.onChange}
+																						type="number" step="0.01" onChange={this.onChange}
 																						value={this.state.cgpa} name="cgpa"
 														/>
 													</div>
@@ -276,8 +273,8 @@ class EditProfile extends Component {
 												<div className="row">
 													<div className="col-md-4">
 														<label className='d-flex justify-content-start'
-																	 htmlFor="student_id"><h6>Student Id</h6></label>
-														<TextFieldGroup placeholder="Enter your College ID"
+																	 htmlFor="student_id"><h6>Student Id</h6><p style={{color: "red"}}>*</p></label>
+														<TextFieldGroup placeholder="20XXA7PSXXXXH"
 																						error={errors.student_id}
 																						type="text" onChange={this.onChange}
 																						value={this.state.student_id}
@@ -286,9 +283,9 @@ class EditProfile extends Component {
 													</div>
 													<div className="col-md-4">
 														<label className='d-flex justify-content-start'
-																	 htmlFor="phone"><h6>Mobile No</h6></label>
+																	 htmlFor="phone"><h6>Mobile No</h6><p style={{color: "red"}}>*</p></label>
 
-														<TextFieldGroup placeholder="Enter your mobile number"
+														<TextFieldGroup placeholder="10 digit mobile number"
 																						error={errors.phone}
 																						type="text" onChange={this.onChange}
 																						value={this.state.phone} name="phone"
@@ -297,19 +294,19 @@ class EditProfile extends Component {
 												</div>
 												<div className="row">
 													<div className='col-md-6'>
-														<h6 className='d-flex justify-content-start'>Graduation Status</h6>
+														<h6 className='d-flex justify-content-start'>Graduation Status</h6><p style={{color: "red"}}>*</p>
 														{/*<label>*/}
 														{/*	{this.state.graduation_status ? <label>Yes, I have completed my graduation</label> :*/}
 														{/*	<label>Yet to be graduated</label>}*/}
 														{/*	<Switch onChange={this.onSwitch} checked={this.state.graduation_status} />*/}
 														{/*</label>*/}
-														<div>
+														<div className='d-flex justify-content-start'>
 															<input type="radio" name="graduation_status"
                                    value='Yes, I have completed my graduation'
                                    checked={this.state.graduation_status}
                                    onChange={this.onSwitch} />Yes, I have completed my graduation
 														</div>
-														<div>
+														<div className='d-flex justify-content-start'>
 															<input type="radio" name="graduation_status"
                                    value='Yet to be graduated'
                                    checked={!this.state.graduation_status}
@@ -330,15 +327,15 @@ class EditProfile extends Component {
 													</div>
 													{graduationSelect}
 													</div>
-												<div className="form-group row d-flex justify-content-end">
-														<button className="btn btn-primary w-30 my-1" type='submit'
+												<div className="form-group row d-flex justify-content-center" style={{margin:'2px'}}>
+														<button className="btn btn-primary w-30 my-1" type='submit' style={{background: 'green', color: 'white'}}
 																		>Update Information
 														</button>
 												</div>
 											</form>
 										</Collapse>
 									</div>
-								</div>
+								{/*</div>*/}
 							</div>
 						</div>
 					</div>

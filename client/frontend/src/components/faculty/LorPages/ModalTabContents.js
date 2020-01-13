@@ -73,7 +73,9 @@ const ModalTabContents = (props) => {
 					<Tab label="View Courses Done" {...a11yProps(2)} />
 					<Tab label="View Projects Done" {...a11yProps(3)} />
 					<Tab label="View Thesis Done" {...a11yProps(4)} />
-					<Tab label="Other Details" {...a11yProps(5)} />
+					<Tab label="Strengths and Achievements" {...a11yProps(5)} />
+					<Tab label="Comments(If any)" {...a11yProps(6)} />
+					<Tab label="Other Details" {...a11yProps(7)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -93,7 +95,13 @@ const ModalTabContents = (props) => {
 				<ThesisDisplayPanel thesis={content.application_details.thesis_done}/>
       </TabPanel>
 			<TabPanel value={value} index={5}>
-				{content.application_details.others.length===0 ? "NA" : content.application_details.others}
+				{content.application_details.strengths.length===0 ? "NA" : <p style={{whiteSpace: 'pre-wrap'}}>{content.application_details.strengths}</p>}
+      </TabPanel>
+			<TabPanel value={value} index={6}>
+				{content.application_details.comments.length===0 ? "NA" : <p style={{whiteSpace: 'pre-wrap'}}>{content.application_details.comments}</p>}
+      </TabPanel>
+			<TabPanel value={value} index={7}>
+				{content.application_details.others.length===0 ? "NA" :<p style={{whiteSpace: 'pre-wrap'}}>{ content.application_details.others}</p>}
       </TabPanel>
     </div>
   );
