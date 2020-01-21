@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7022dd86-529b-4f3e-99a4-b2159242c198" name="Default Changelist" comment="# Final Commit&#10;# Beta Release Version&#10;# Added grade input validation&#10;# Fixed all known bugs&#10;#">
+    <list default="true" id="7022dd86-529b-4f3e-99a4-b2159242c198" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/MyAccount/EditProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/MyAccount/EditProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/dashboard/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/dashboard/studentDashboard/StudentHomeFeedTable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/ModalTabContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/faculty/LorPages/ModalTabContents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/components/upload/UploadFiles.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/components/upload/UploadFiles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/frontend/src/validation/validateLorSubmission.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/validation/validateLorSubmission.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/frontend/src/App.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +67,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="11.10.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/frontend/src/components/student/SubmitLor/CPT" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -291,6 +286,11 @@
       <workItem from="1577976274144" duration="517000" />
       <workItem from="1578838646055" duration="11671000" />
       <workItem from="1578891699064" duration="4991000" />
+      <workItem from="1578897171062" duration="76000" />
+      <workItem from="1579257337264" duration="1402000" />
+      <workItem from="1579337893571" duration="166000" />
+      <workItem from="1579602606792" duration="178000" />
+      <workItem from="1579602820558" duration="447000" />
     </task>
     <task id="LOCAL-00001" summary="#Initial Commit&#10;#Completed Authentication&#10;#Created add_lor and User Models">
       <created>1565873737853</created>
@@ -446,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578854408193</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="# Final Commit&#10;# Beta Release Version&#10;# Added grade input validation&#10;# Fixed all known bugs&#10;# Next release to add tool-tips">
+      <created>1578897211824</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1578897211824</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -486,7 +493,8 @@
     <MESSAGE value="# Final Commit&#10;# Beta Release Version&#10;# Fixed view profile in faculty and hod" />
     <MESSAGE value="# Final Commit&#10;# Beta Release Version&#10;# Fixed view profile in faculty and hod&#10;# Fixed few view Course profiles" />
     <MESSAGE value="# Final Commit&#10;# Beta Release Version&#10;# Added Strengths and Comments to applications&#10;#Added required fields to the database&#10;# Added grade entry field for student&#10;#TODO Validation of grades" />
-    <option name="LAST_COMMIT_MESSAGE" value="# Final Commit&#10;# Beta Release Version&#10;# Added Strengths and Comments to applications&#10;#Added required fields to the database&#10;# Added grade entry field for student&#10;#TODO Validation of grades" />
+    <MESSAGE value="# Final Commit&#10;# Beta Release Version&#10;# Added grade input validation&#10;# Fixed all known bugs&#10;# Next release to add tool-tips" />
+    <option name="LAST_COMMIT_MESSAGE" value="# Final Commit&#10;# Beta Release Version&#10;# Added grade input validation&#10;# Fixed all known bugs&#10;# Next release to add tool-tips" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="masterDetails">

@@ -9,6 +9,9 @@ import URLSearchParams from "url-search-params";
 import Routes from './components/common/Routes/Routes'
 import Sidebar from "./components/layout/Sidebar";
 import {convertGoogleToken, googleLogoutAction, setCurrentUserGoogle} from "./actions/googleAuthActions";
+import {GOOGLE_LOGOUT} from "./actions/types";
+import setAuthToken from "./utils/setAuthToken";
+import {setCurrentUser} from "./actions/authActions";
 
 //Check for token
 // if(localStorage.jwtToken) {
@@ -32,7 +35,7 @@ if (localStorage.getItem("google_access_token") &&localStorage.length > 0) {
   const timeLeft = tokenExpirationTime - currentTime;
   console.log("token time left =======>", timeLeft);
   // check if the token is expired, if so log the user out
-  if (tokenExpirationTime && tokenExpirationTime - currentTime <= 0) {
+  if (tokenExpirationTime || tokenExpirationTime - currentTime <= 0) {
     console.log("TOKEN IS EXPIRED");
     localStorage.removeItem("google_access_token_conv");
     localStorage.removeItem("google_refresh_token_conv");
@@ -40,6 +43,15 @@ if (localStorage.getItem("google_access_token") &&localStorage.length > 0) {
     localStorage.removeItem("id");
     localStorage.removeItem("role");
     localStorage.removeItem("email");
+    localStorage.removeItem('jwtToken');
+		localStorage.removeItem("google_access_token");
+		localStorage.removeItem("google_refresh_token");
+		localStorage.removeItem("google_access_token_expires_in");
+		localStorage.removeItem("google_avatar_url");
+		localStorage.removeItem("google_name");
+		store.dispatch({type: GOOGLE_LOGOUT, payload: null});
+		setAuthToken(false);
+		store.dispatch(setCurrentUser({}));
     store.dispatch(googleLogoutAction());
     window.location.href = '/';
   }else {
