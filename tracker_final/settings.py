@@ -84,8 +84,8 @@ AUTHENTICATION_BACKENDS = (
 	'rest_framework_social_oauth2.backends.DjangoOAuth2',
 )
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '373821760819-n464h5ipe9u121o98tqbd5973q4m1djg.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'uvYdbYFXbGTCnqCw_wZ0CmHi'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '********************************.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '------'
 OAUTH2_PROVIDER = {
     'ACCESS_TOKEN_EXPIRE_SECONDS': 36000,
 }
